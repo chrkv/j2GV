@@ -23,7 +23,12 @@ public class GraphVizConveter {
     private static final List<String> nodes = new ArrayList<String>();
 
     public static void main(String[] args) throws IOException {
-        if (args.length < 1) return;
+        if (args.length < 1) {
+            System.out.println("Please specify input filename as first parameter and output filename as second parameter " +
+                    "or omit second parameter to send output to standard output stream");
+            return;
+        }
+
         readModel(args[0]);
 
         if (args.length < 2) {
